@@ -24,19 +24,19 @@
     "url": "$SECRET_VOTES_HOST",
     "icon": "https://icons.duckduckgo.com/ip3/null.ico",
     "slug": "similarites-votes-ssl",
-    "status": "down",
-    "uptime": "30.63%",
-    "uptimeDay": "30.63%",
-    "uptimeWeek": "30.63%",
-    "uptimeMonth": "30.63%",
-    "uptimeYear": "30.63%",
+    "status": "up",
+    "uptime": "9.20%",
+    "uptimeDay": "9.20%",
+    "uptimeWeek": "9.20%",
+    "uptimeMonth": "9.20%",
+    "uptimeYear": "9.20%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2026-09-08": 0
+      "2026-09-08": 3
     }
   },
   {
@@ -45,11 +45,11 @@
     "icon": "https://icons.duckduckgo.com/ip3/null.ico",
     "slug": "calendrier",
     "status": "up",
-    "uptime": "66.23%",
-    "uptimeDay": "66.23%",
-    "uptimeWeek": "66.23%",
-    "uptimeMonth": "66.23%",
-    "uptimeYear": "66.23%",
+    "uptime": "66.80%",
+    "uptimeDay": "66.80%",
+    "uptimeWeek": "66.80%",
+    "uptimeMonth": "66.80%",
+    "uptimeYear": "66.80%",
     "time": 1143,
     "timeDay": 1143,
     "timeWeek": 1143,
@@ -64,19 +64,19 @@
     "url": "$SECRET_CALENDAR_HOST",
     "icon": "https://icons.duckduckgo.com/ip3/null.ico",
     "slug": "calendar-ssl",
-    "status": "down",
-    "uptime": "48.78%",
-    "uptimeDay": "48.78%",
-    "uptimeWeek": "48.78%",
-    "uptimeMonth": "48.78%",
-    "uptimeYear": "48.78%",
+    "status": "up",
+    "uptime": "8.05%",
+    "uptimeDay": "8.05%",
+    "uptimeWeek": "8.05%",
+    "uptimeMonth": "8.05%",
+    "uptimeYear": "8.05%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2026-09-08": 0
+      "2026-09-08": 3
     }
   }
 ]
