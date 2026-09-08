@@ -8,7 +8,7 @@ sites:
   - name: Calendrier
     url: $SECRET_CALENDAR_SITE
   - name: Notif test
-    url: https://notifications.invalid
+    url: https://www.google.com
 
 status-website:
   # cname: demo.upptime.js.org
