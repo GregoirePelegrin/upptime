@@ -10,11 +10,11 @@
     "uptimeWeek": "99.36%",
     "uptimeMonth": "99.36%",
     "uptimeYear": "99.36%",
-    "time": 789,
-    "timeDay": 1002,
-    "timeWeek": 789,
-    "timeMonth": 789,
-    "timeYear": 789,
+    "time": 784,
+    "timeDay": 943,
+    "timeWeek": 784,
+    "timeMonth": 784,
+    "timeYear": 784,
     "dailyMinutesDown": {
       "2026-09-08": 62
     }
@@ -25,36 +25,18 @@
     "icon": "https://icons.duckduckgo.com/ip3/null.ico",
     "slug": "calendrier",
     "status": "up",
-    "uptime": "26.32%",
-    "uptimeDay": "26.32%",
-    "uptimeWeek": "26.32%",
-    "uptimeMonth": "26.32%",
-    "uptimeYear": "26.32%",
-    "time": 942,
-    "timeDay": 942,
-    "timeWeek": 942,
-    "timeMonth": 942,
-    "timeYear": 942,
+    "uptime": "27.65%",
+    "uptimeDay": "27.65%",
+    "uptimeWeek": "27.65%",
+    "uptimeMonth": "27.65%",
+    "uptimeYear": "27.65%",
+    "time": 1291,
+    "timeDay": 1291,
+    "timeWeek": 1291,
+    "timeMonth": 1291,
+    "timeYear": 1291,
     "dailyMinutesDown": {
       "2026-09-08": 62
     }
-  },
-  {
-    "name": "Notif test",
-    "url": "https://www.google.com",
-    "icon": "https://icons.duckduckgo.com/ip3/www.google.com.ico",
-    "slug": "notif-test",
-    "status": "up",
-    "uptime": "100.00%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
-    "time": 108,
-    "timeDay": 108,
-    "timeWeek": 108,
-    "timeMonth": 108,
-    "timeYear": 108,
-    "dailyMinutesDown": {}
   }
 ]
