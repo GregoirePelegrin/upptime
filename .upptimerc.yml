@@ -5,8 +5,16 @@ repo: upptime # The name of this repository
 sites:
   - name: Similarités votes
     url: $SECRET_VOTES_SITE
+  - name: Similarités votes SSL
+    check: ssl
+    url: $SECRET_VOTES_HOST
+    port: 443
   - name: Calendrier
     url: $SECRET_CALENDAR_SITE
+  - name: Calendar SSL
+    check: ssl
+    url: $SECRET_CALENDAR_HOST
+    port: 443
 
 status-website:
   # cname: demo.upptime.js.org
@@ -25,7 +33,9 @@ status-website:
 # See https://upptime.js.org/docs/configuration
 secrets:
   - SECRET_VOTES_SITE
+  - SECRET_VOTES_HOST
   - SECRET_CALENDAR_SITE
+  - SECRET_CALENDAR_HOST
   - NOTIFICATION_TELEGRAM
   - NOTIFICATION_TELEGRAM_BOT_KEY
   - NOTIFICATION_TELEGRAM_CHAT_ID

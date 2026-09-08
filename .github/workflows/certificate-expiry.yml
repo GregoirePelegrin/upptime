@@ -1,0 +1,128 @@
+#
+# Certificate expiry checker for hosts in .upptimerc.yml.
+# Custom workflow — not managed by the Upptime template updater.
+#
+name: Certificate Expiry CI
+on:
+  schedule:
+    - cron: "0 9 * * *"
+  workflow_dispatch:
+concurrency:
+  group: ${{ github.repository }}-certificate-expiry
+  cancel-in-progress: false
+permissions:
+  contents: read
+jobs:
+  check:
+    name: Check certificates
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      NOTIFICATION_TELEGRAM_BOT_KEY: ${{ secrets.NOTIFICATION_TELEGRAM_BOT_KEY }}
+      NOTIFICATION_TELEGRAM_CHAT_ID: ${{ secrets.NOTIFICATION_TELEGRAM_CHAT_ID }}
+      SECRET_VOTES_HOST: ${{ secrets.SECRET_VOTES_HOST }}
+      SECRET_CALENDAR_HOST: ${{ secrets.SECRET_CALENDAR_HOST }}
+      SECRET_VOTES_SITE: ${{ secrets.SECRET_VOTES_SITE }}
+      SECRET_CALENDAR_SITE: ${{ secrets.SECRET_CALENDAR_SITE }}
+      CERT_ALERT_DAYS: "14"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+      - name: Check certificates and notify
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import datetime as dt
+          import html
+          import os
+          import re
+          import subprocess
+
+          THRESHOLD = int(os.environ.get("CERT_ALERT_DAYS", "14"))
+          snapshot = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d")
+
+          def load_sites():
+              sites = []
+              section = False
+              current = None
+              with open(".upptimerc.yml", encoding="utf-8") as f:
+                  for raw in f:
+                      line = raw.rstrip("\n")
+                      if line.startswith("sites:"):
+                          section = True
+                          continue
+                      if section and line and not line.startswith(" ") and not line.startswith("-"):
+                          break
+                      if not section or not line.strip():
+                          continue
+                      m = re.match(r"\s*-?\s*name:\s*(.+)$", line)
+                      if m:
+                          current = {"url": "", "check": "http", "port": "443"}
+                          sites.append((m.group(1).strip(), current))
+                          continue
+                      if current is not None:
+                          m = re.match(r"\s*(\w+):\s*(.*)$", line)
+                          if m and m.group(1) in ("url", "check", "port"):
+                              current[m.group(1)] = m.group(2).strip()
+              return sites
+
+          def resolve_url(url):
+              return re.sub(r"\$([A-Z0-9_]+)", lambda m: os.environ.get(m.group(1), ""), url)
+
+          def cert_info(url, port):
+              host = resolve_url(url).strip()
+              host = re.sub(r"^[a-z][a-z0-9+.-]*://", "", host).split("/")[0].split("?")[0]
+              if not host or host.startswith("$") or " " in host:
+                  return None
+              cmd = f'echo | openssl s_client -servername "{host}" -connect "{host}:{port}" 2>/dev/null | openssl x509 -noout -enddate 2>/dev/null'
+              try:
+                  out = subprocess.run(["bash", "-c", cmd], capture_output=True, text=True, timeout=30).stdout
+              except subprocess.TimeoutExpired:
+                  return {"host": host, "port": port, "fail": True}
+              m = re.search(r"notAfter=(.+)$", out, re.M)
+              if not m:
+                  return {"host": host, "port": port, "fail": True}
+              try:
+                  exp = dt.datetime.strptime(m.group(1).strip(), "%b %d %H:%M:%S %Y GMT").replace(tzinfo=dt.timezone.utc)
+              except ValueError:
+                  return {"host": host, "port": port, "fail": True}
+              days = int((exp - dt.datetime.now(dt.timezone.utc)).total_seconds() // 86400)
+              return {"host": host, "port": port, "exp": exp, "days": days}
+
+          lines = [f"🔐 Certificate expiry · {snapshot}"]
+          for name, site in load_sites():
+              info = cert_info(site.get("url") or "", site.get("port") or "443")
+              if info is None:
+                  continue
+              if info.get("fail"):
+                  lines.append(f"❌ {html.escape(info['host'])}:{info['port']} — unreachable / no cert")
+                  continue
+              mark = "⚠️" if info["days"] <= THRESHOLD else "🌐"
+              lines.append(f"{mark} {html.escape(info['host'])} — expires <b>{html.escape(info['exp'].strftime('%Y-%m-%d'))}</b> ({info['days']} days left)")
+          if len(lines) == 1:
+              lines.append("⚠️ No hosts parsed from .upptimerc.yml")
+
+          message = "\n".join(lines)
+          bot_key = os.environ.get("NOTIFICATION_TELEGRAM_BOT_KEY", "")
+          chat_id = os.environ.get("NOTIFICATION_TELEGRAM_CHAT_ID", "")
+          url = f"https://api.telegram.org/bot{bot_key}/sendMessage"
+          subprocess.run(
+              ["curl", "-fsS", "-X", "POST", url,
+               "--data-urlencode", f"chat_id={chat_id}",
+               "--data-urlencode", "parse_mode=HTML",
+               "--data-urlencode", "disable_web_page_preview=true",
+               "--data-urlencode", f"text={message}"],
+              check=True,
+          )
+          PY
+      - name: Notify on failure
+        if: ${{ failure() }}
+        env:
+          NOTIFICATION_TELEGRAM_BOT_KEY: ${{ secrets.NOTIFICATION_TELEGRAM_BOT_KEY }}
+          NOTIFICATION_TELEGRAM_CHAT_ID: ${{ secrets.NOTIFICATION_TELEGRAM_CHAT_ID }}
+        run: |
+          curl -fsS -X POST "https://api.telegram.org/bot${NOTIFICATION_TELEGRAM_BOT_KEY}/sendMessage" \
+            --data-urlencode "chat_id=${NOTIFICATION_TELEGRAM_CHAT_ID}" \
+            --data-urlencode "text=❌ Certificate Expiry CI failed — https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
