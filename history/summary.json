@@ -4,19 +4,19 @@
     "url": "$SECRET_VOTES_SITE",
     "icon": "https://icons.duckduckgo.com/ip3/null.ico",
     "slug": "similarites-votes",
-    "status": "down",
-    "uptime": "100.00%",
-    "uptimeDay": "99.97%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
-    "time": 696,
-    "timeDay": 616,
-    "timeWeek": 696,
-    "timeMonth": 696,
-    "timeYear": 696,
+    "status": "up",
+    "uptime": "99.36%",
+    "uptimeDay": "95.71%",
+    "uptimeWeek": "99.36%",
+    "uptimeMonth": "99.36%",
+    "uptimeYear": "99.36%",
+    "time": 829,
+    "timeDay": 1456,
+    "timeWeek": 829,
+    "timeMonth": 829,
+    "timeYear": 829,
     "dailyMinutesDown": {
-      "2026-09-08": 0
+      "2026-09-08": 62
     }
   },
   {
@@ -24,19 +24,19 @@
     "url": "$SECRET_CALENDAR_SITE",
     "icon": "https://icons.duckduckgo.com/ip3/null.ico",
     "slug": "calendrier",
-    "status": "down",
-    "uptime": "59.93%",
-    "uptimeDay": "59.93%",
-    "uptimeWeek": "59.93%",
-    "uptimeMonth": "59.93%",
-    "uptimeYear": "59.93%",
-    "time": 0,
-    "timeDay": 0,
-    "timeWeek": 0,
-    "timeMonth": 0,
-    "timeYear": 0,
+    "status": "up",
+    "uptime": "0.40%",
+    "uptimeDay": "0.40%",
+    "uptimeWeek": "0.40%",
+    "uptimeMonth": "0.40%",
+    "uptimeYear": "0.40%",
+    "time": 1837,
+    "timeDay": 1837,
+    "timeWeek": 1837,
+    "timeMonth": 1837,
+    "timeYear": 1837,
     "dailyMinutesDown": {
-      "2026-09-08": 0
+      "2026-09-08": 62
     }
   }
 ]
