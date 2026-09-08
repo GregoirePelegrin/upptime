@@ -4,7 +4,9 @@ repo: upptime # The name of this repository
 
 sites:
   - name: Similarités votes
-    url: https://similarites-votes.duckdns.org
+    url: $SECRET_VOTES_SITE
+  - name: Calendrier
+    url: $SECRET_CALENDAR_SITE
 
 status-website:
   # cname: demo.upptime.js.org
@@ -22,6 +24,8 @@ status-website:
 # Upptime also supports notifications, assigning issues, and more
 # See https://upptime.js.org/docs/configuration
 secrets:
+  - SECRET_VOTES_SITE
+  - SECRET_CALENDAR_SITE
   - NOTIFICATION_TELEGRAM
   - NOTIFICATION_TELEGRAM_BOT_KEY
   - NOTIFICATION_TELEGRAM_CHAT_ID
