@@ -5,16 +5,16 @@
     "icon": "https://icons.duckduckgo.com/ip3/null.ico",
     "slug": "similarites-votes",
     "status": "up",
-    "uptime": "99.37%",
+    "uptime": "99.43%",
     "uptimeDay": "95.71%",
-    "uptimeWeek": "99.37%",
-    "uptimeMonth": "99.37%",
-    "uptimeYear": "99.37%",
-    "time": 886,
-    "timeDay": 1188,
-    "timeWeek": 886,
-    "timeMonth": 886,
-    "timeYear": 886,
+    "uptimeWeek": "99.39%",
+    "uptimeMonth": "99.43%",
+    "uptimeYear": "99.43%",
+    "time": 963,
+    "timeDay": 1453,
+    "timeWeek": 973,
+    "timeMonth": 963,
+    "timeYear": 963,
     "dailyMinutesDown": {
       "2026-09-08": 62
     }
@@ -25,19 +25,17 @@
     "icon": "https://icons.duckduckgo.com/ip3/null.ico",
     "slug": "similarites-votes-ssl",
     "status": "up",
-    "uptime": "9.20%",
-    "uptimeDay": "9.20%",
-    "uptimeWeek": "9.20%",
-    "uptimeMonth": "9.20%",
-    "uptimeYear": "9.20%",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
-    "dailyMinutesDown": {
-      "2026-09-08": 3
-    }
+    "dailyMinutesDown": {}
   },
   {
     "name": "Calendrier",
@@ -45,16 +43,16 @@
     "icon": "https://icons.duckduckgo.com/ip3/null.ico",
     "slug": "calendrier",
     "status": "up",
-    "uptime": "66.80%",
-    "uptimeDay": "66.80%",
-    "uptimeWeek": "66.80%",
-    "uptimeMonth": "66.80%",
-    "uptimeYear": "66.80%",
-    "time": 1143,
-    "timeDay": 1143,
-    "timeWeek": 1143,
-    "timeMonth": 1143,
-    "timeYear": 1143,
+    "uptime": "95.06%",
+    "uptimeDay": "95.06%",
+    "uptimeWeek": "95.06%",
+    "uptimeMonth": "95.06%",
+    "uptimeYear": "95.06%",
+    "time": 1035,
+    "timeDay": 1035,
+    "timeWeek": 1035,
+    "timeMonth": 1035,
+    "timeYear": 1035,
     "dailyMinutesDown": {
       "2026-09-08": 62
     }
@@ -65,18 +63,16 @@
     "icon": "https://icons.duckduckgo.com/ip3/null.ico",
     "slug": "calendar-ssl",
     "status": "up",
-    "uptime": "8.05%",
-    "uptimeDay": "8.05%",
-    "uptimeWeek": "8.05%",
-    "uptimeMonth": "8.05%",
-    "uptimeYear": "8.05%",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
-    "dailyMinutesDown": {
-      "2026-09-08": 3
-    }
+    "dailyMinutesDown": {}
   }
 ]
