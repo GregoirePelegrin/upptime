@@ -1,0 +1,24 @@
+name: Votes Metrics Telegram
+
+on:
+  schedule:
+    - cron: "0 20 * * *"   # daily at 20:00 UTC (22:00 Paris)
+  workflow_dispatch:
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - run: python workflow.script.py
+        env:
+          VOTES_METRICS_API_KEY: ${{ secrets.VOTES_METRICS_API_KEY }}
+          VOTES_METRICS_URL: https://similarites-votes.duckdns.org/api/metrics
+          TELEGRAM_BOT_KEY: ${{ secrets.NOTIFICATION_TELEGRAM_BOT_KEY }}
+          TELEGRAM_CHAT_ID: ${{ secrets.NOTIFICATION_TELEGRAM_CHAT_ID }}
+          METRICS_ALERT_THRESHOLD: "100"
