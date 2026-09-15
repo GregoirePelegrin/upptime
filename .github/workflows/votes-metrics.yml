@@ -15,7 +15,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install requests
-      - run: python workflow.script.py
+      - run: python votes-metrics-workflow.script.py
         env:
           VOTES_METRICS_API_KEY: ${{ secrets.VOTES_METRICS_API_KEY }}
           VOTES_METRICS_URL: https://similarites-votes.duckdns.org/api/metrics
