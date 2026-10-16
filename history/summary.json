@@ -10,11 +10,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.90%",
-    "time": 753,
-    "timeDay": 641,
-    "timeWeek": 565,
+    "time": 748,
+    "timeDay": 507,
+    "timeWeek": 557,
     "timeMonth": 679,
-    "timeYear": 753,
+    "timeYear": 748,
     "dailyMinutesDown": {
       "2026-09-08": 62
     }
@@ -43,16 +43,16 @@
     "icon": "https://icons.duckduckgo.com/ip3/null.ico",
     "slug": "calendrier",
     "status": "up",
-    "uptime": "99.88%",
+    "uptime": "99.89%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
-    "uptimeYear": "99.88%",
-    "time": 705,
-    "timeDay": 570,
-    "timeWeek": 451,
+    "uptimeYear": "99.89%",
+    "time": 699,
+    "timeDay": 441,
+    "timeWeek": 445,
     "timeMonth": 627,
-    "timeYear": 705,
+    "timeYear": 699,
     "dailyMinutesDown": {
       "2026-09-08": 62
     }
