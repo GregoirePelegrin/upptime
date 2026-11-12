@@ -1,43 +1,5 @@
 [
   {
-    "name": "Similarités votes",
-    "url": "$SECRET_VOTES_SITE",
-    "icon": "https://icons.duckduckgo.com/ip3/null.ico",
-    "slug": "similarites-votes",
-    "status": "up",
-    "uptime": "99.94%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "99.94%",
-    "time": 805,
-    "timeDay": 480,
-    "timeWeek": 787,
-    "timeMonth": 881,
-    "timeYear": 805,
-    "dailyMinutesDown": {
-      "2026-09-08": 62
-    }
-  },
-  {
-    "name": "Similarités votes SSL",
-    "url": "$SECRET_VOTES_HOST",
-    "icon": "https://icons.duckduckgo.com/ip3/null.ico",
-    "slug": "similarites-votes-ssl",
-    "status": "up",
-    "uptime": "100.00%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
-    "time": 0,
-    "timeDay": 0,
-    "timeWeek": 0,
-    "timeMonth": 0,
-    "timeYear": 0,
-    "dailyMinutesDown": {}
-  },
-  {
     "name": "Calendrier",
     "url": "$SECRET_CALENDAR_SITE",
     "icon": "https://icons.duckduckgo.com/ip3/null.ico",
@@ -48,11 +10,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.93%",
-    "time": 677,
-    "timeDay": 408,
-    "timeWeek": 515,
-    "timeMonth": 618,
-    "timeYear": 677,
+    "time": 671,
+    "timeDay": 362,
+    "timeWeek": 490,
+    "timeMonth": 608,
+    "timeYear": 671,
     "dailyMinutesDown": {
       "2026-09-08": 62
     }
