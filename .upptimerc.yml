@@ -3,12 +3,6 @@ owner: GregoirePelegrin # Your GitHub organization or username, where this repos
 repo: upptime # The name of this repository
 
 sites:
-  - name: Similarités votes
-    url: $SECRET_VOTES_SITE
-  - name: Similarités votes SSL
-    check: ssl
-    url: $SECRET_VOTES_HOST
-    port: 443
   - name: Calendrier
     url: $SECRET_CALENDAR_SITE
   - name: Calendar SSL
@@ -32,8 +26,6 @@ status-website:
 # Upptime also supports notifications, assigning issues, and more
 # See https://upptime.js.org/docs/configuration
 secrets:
-  - SECRET_VOTES_SITE
-  - SECRET_VOTES_HOST
   - SECRET_CALENDAR_SITE
   - SECRET_CALENDAR_HOST
   - NOTIFICATION_TELEGRAM
